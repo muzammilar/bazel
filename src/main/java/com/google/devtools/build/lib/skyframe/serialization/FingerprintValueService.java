@@ -288,4 +288,9 @@ public final class FingerprintValueService implements KeyValueWriter {
   public PackedFingerprint getCachedFingerprintForTesting(Object object) {
     return (PackedFingerprint) cache.getSerializationCache().getIfPresent(object);
   }
+
+  @VisibleForTesting
+  public void cacheCleanUpForTesting() {
+    cache.cleanUpForTesting();
+  }
 }
